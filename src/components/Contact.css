@@ -1,0 +1,88 @@
+.contact-container {
+    width: 100%e;
+    background-color: #212121;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    padding: 4rem 0;
+}
+
+.contact-text h2 {
+    margin-bottom: -1rem;
+}
+
+.contact-text p {
+    font-size: 1.5em;
+    text-align: start;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.contact-link {
+    margin: 0.5rem 0;
+    text-decoration: none;
+    padding: 0 1rem;
+    color: #333;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(100, 108, 255, 0.2);
+    /* background-color: aqua; */
+
+}
+
+.contact-link:hover {
+    transform: translateY(-5px);
+    border-color: #646cff;
+    box-shadow: 0 15px 35px rgba(100, 108, 255, 0.3);
+}
+
+.contact-link img {
+    width: 32px;
+    padding-right: 0.8rem;
+}
+
+.contact-link p {
+    font-size: medium;
+    color: #646cff;
+}
+
+.contact-link:hover {
+    color: #007bff;
+}
+
+.contact-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-right: 4rem;
+    /* teste */
+    /* background-color: aqua; */
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to { 
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

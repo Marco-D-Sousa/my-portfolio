@@ -1,0 +1,173 @@
+.home-btn {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #646cff, #535bf2);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(100, 108, 255, 0.3);
+  transition: all 0.3s ease;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.8);
+}
+
+.home-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.home-btn:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 8px 25px rgba(100, 108, 255, 0.5);
+  background: linear-gradient(135deg, #535bf2, #646cff);
+}
+
+.home-btn:active {
+  transform: translateY(-1px) scale(1.05);
+}
+
+.home-btn svg {
+  transition: transform 0.2s ease;
+}
+
+.home-btn:hover svg {
+  transform: translateY(-2px);
+}
+
+/* Versão alternativa com texto */
+.home-btn-with-text {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #646cff, #535bf2);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 15px rgba(100, 108, 255, 0.3);
+  transition: all 0.3s ease;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.8);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.home-btn-with-text.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.home-btn-with-text:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(100, 108, 255, 0.5);
+}
+
+/* Efeito pulsante quando aparece */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 4px 15px rgba(100, 108, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 25px rgba(100, 108, 255, 0.6);
+  }
+  100% {
+    box-shadow: 0 4px 15px rgba(100, 108, 255, 0.3);
+  }
+}
+
+.home-btn.visible {
+  animation: pulse 2s infinite;
+}
+
+/* Tooltip */
+.home-btn::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.home-btn::after {
+  content: '';
+  position: absolute;
+  left: 52px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right: 8px solid rgba(0, 0, 0, 0.9);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.home-btn:hover::before,
+.home-btn:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .home-btn {
+    bottom: 1.5rem;
+    left: 1.5rem;
+    width: 45px;
+    height: 45px;
+  }
+  
+  .home-btn-with-text {
+    bottom: 1.5rem;
+    left: 1.5rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-btn {
+    bottom: 1rem;
+    left: 1rem;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .home-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+}

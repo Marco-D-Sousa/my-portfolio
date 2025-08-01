@@ -1,0 +1,63 @@
+.navbar {
+    height: 12rem;
+    width: 100%;
+    background: #242424;
+    background: linear-gradient(to top,
+            rgba(36, 36, 36, 1) 0%,
+            rgba(123, 118, 57, 1) 5%,
+            rgba(176, 167, 70, 1) 10%,
+            rgba(217, 205, 78, 1) 15%,
+            rgba(236, 224, 84, 1) 20%);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0rem 4rem 0rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    /* teste */
+    /* background-color: red; */
+}
+
+.nav-logo a {
+    font-family: "Nova Mono", monospace;
+    font-size: 3rem;
+    font-weight: 800;
+    font-style: bold;
+    color: #646cff;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: rgba(0, 0, 0, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: "Nova Mono", monospace;
+    display: inline-block; /* Importante para scale funcionar */
+    transform-origin: center;
+}
+
+.nav-link:hover {
+    color: #646cff;
+}
+
+#animation .nav-link {
+    font-size: 1.5rem;
+    color: currentColor;
+    letter-spacing: 0.06em;
+}
