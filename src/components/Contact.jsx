@@ -18,7 +18,6 @@ function Contact() {
         closeEmailModal()
     }
 
-
     return (
         <>
             <div className="contact-container">
@@ -32,16 +31,13 @@ function Contact() {
                         onClick={openEmailModal}
                         className='contact-link contact-email-btn'
                     >
-                        <img src="icon-email.svg" alt="" />
-                        <p>Email</p>
+                        <img src="./assets/icon-email.svg" alt="" />
                     </button>
                     <a href="https://github.com/Marco-D-Sousa" className="contact-link" target="_blank" rel="noopener noreferrer">
-                        <img src="icon-github.svg" alt="" />
-                        <p>Github</p>
+                        <img src="./assets/icon-github.svg" alt="" />
                     </a>
                     <a href="https://www.linkedin.com/in/marko-de-sousa/" className="contact-link" target="_blank" rel="noopener noreferrer">
-                        <img src="icon-linkedin.svg" alt="" />
-                        <p>LinkedIn</p>
+                        <img src="./assets/icon-linkedin.svg" alt="" />
                     </a>
                 </div>
             </div>

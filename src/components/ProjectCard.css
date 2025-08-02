@@ -1,0 +1,192 @@
+:root {
+    margin: 0;
+    padding: 0;
+}
+
+#card {
+    height: fit-content;
+    min-width: 225px;
+    max-width: 400px;
+
+    border-radius: 12px;
+    border: 2px solid rgba(97, 218, 251, 0.3);
+
+    /* teste */
+    background-color: #1a1a1a;
+}
+
+.top-bar {
+    height: fit-content;
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.top-bar h2 {
+    margin: 0;
+    text-align: start;
+    padding-left: 1rem;
+    font-size: 2rem;
+}
+
+.top-bar p {
+    margin: 0;
+    text-align: start;
+    padding-left: 1rem;
+    padding-bottom: 0.8rem;
+    margin-top: -0.5rem;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    padding-right: 1.2rem;
+}
+
+.actions button {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.actions button:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid rgba(97, 218, 251, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.tooltip-text {
+    visibility: hidden;
+    text-align: center;
+    position: absolute;
+    bottom: 115%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1a1a1a;
+    opacity: 0;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    color: #fff;
+    white-space: nowrap;
+    z-index: 1000;
+    
+    /* Animação de entrada */
+    transition: all 0.3s ease;
+    transform: translateX(-50%) translateY(10px);
+}
+
+.actions button:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.actions img {
+    width: 32px;
+    height: 32px;
+}
+
+.content {
+    width: 100%;
+}
+
+.content img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.content p {
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: justify;
+
+    /* Quebra de palavras com hifens */
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+
+    /* Configurações de quebra */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: normal;
+
+    /* Evita viúvas e órfãs (linhas isoladas) */
+    orphans: 2;
+    widows: 2;
+
+    /* Tipografia avançada */
+    text-rendering: optimizeLegibility;
+    font-kerning: auto;
+}
+
+.tech {
+    width: 90%;
+    height: fit-content;
+    margin: 0 auto;
+    border-radius: 12px;
+    border: 2px solid rgba(97, 218, 251, 0.3);
+    margin-bottom: 1rem;
+}
+
+.tech h3 {
+    position: relative;
+    top: -1rem;
+    display: inline-block;
+    padding: 0 0.5rem 0 0.5rem;
+    margin: 0;
+}
+
+.tech-list {
+    list-style-type: none;
+    padding: 0 0 1rem 0;
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Cores para cada tipo de projeto */
+.top-bar.frontend {
+    background-color: rgb(97, 218, 251);
+    /* Azul - React/Frontend */
+}
+
+.top-bar.backend {
+    background-color: #68d391;
+    /* Verde - Backend/Servidor */
+}
+
+.top-bar.fullstack {
+    background-color: #f093fb;
+    /* Rosa/Roxo - Fullstack */
+}
+
+/* Alternativa com gradiente para fullstack */
+.top-bar.fullstack {
+    background: linear-gradient(90deg, #61dafb 50%, #68d391 50%);
+}
+
+/* MID */
+.middle {
+    /* teste */
+    background-color: aqua;
+}
+
+/* BOT */
+.bottom {
+    /* teste */
+    background-color: blueviolet;
+}
