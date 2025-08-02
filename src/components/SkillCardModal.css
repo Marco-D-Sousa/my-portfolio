@@ -72,48 +72,48 @@
 
 /* Cores específicas para cada nível no card */
 .level-segment:nth-child(1).filled {
-  background: linear-gradient(90deg, #ff6b6b, #ee5a24); /* Vermelho - Iniciante */
+  background: linear-gradient(90deg, #ff6b6b, #ee5a24);
+  /* Vermelho - Iniciante */
   box-shadow: 0 0 8px rgba(255, 107, 107, 0.5);
 }
 
 .level-segment:nth-child(2).filled {
-  background: linear-gradient(90deg, #ffa726, #ff9800); /* Laranja - Intermediário */
+  background: linear-gradient(90deg, #ffa726, #ff9800);
+  /* Laranja - Intermediário */
   box-shadow: 0 0 8px rgba(255, 167, 38, 0.5);
 }
 
 .level-segment:nth-child(3).filled {
-  background: linear-gradient(90deg, #66bb6a, #4caf50); /* Verde - Experiente */
+  background: linear-gradient(90deg, #66bb6a, #4caf50);
+  /* Verde - Experiente */
   box-shadow: 0 0 8px rgba(102, 187, 106, 0.5);
 }
 
 .level-segment:nth-child(4).filled {
-  background: linear-gradient(90deg, #646cff, #535bf2); /* Azul - Mestre */
+  background: linear-gradient(90deg, #646cff, #535bf2);
+  /* Azul - Mestre */
   box-shadow: 0 0 8px rgba(100, 108, 255, 0.5);
-}
-
-.level-text {
-  font-size: 0.8rem;
-  font-weight: 600;
-  min-width: 80px;
-  text-align: right;
-  transition: color 0.3s ease;
 }
 
 /* Cor do texto baseada no nível */
 .skill-card[data-level="1"] .level-text {
-  color: #ff6b6b; /* Iniciante - Vermelho */
+  color: #ff6b6b;
+  /* Iniciante - Vermelho */
 }
 
 .skill-card[data-level="2"] .level-text {
-  color: #ffa726; /* Intermediário - Laranja */
+  color: #ffa726;
+  /* Intermediário - Laranja */
 }
 
 .skill-card[data-level="3"] .level-text {
-  color: #66bb6a; /* Experiente - Verde */
+  color: #66bb6a;
+  /* Experiente - Verde */
 }
 
 .skill-card[data-level="4"] .level-text {
-  color: #646cff; /* Mestre - Azul */
+  color: #646cff;
+  /* Mestre - Azul */
 }
 
 .view-btn {
@@ -130,9 +130,12 @@
   flex-shrink: 0;
 }
 
-.view-btn:hover {
-  background: #646cff;
-  color: white;
+.view-btn svg {
+  animation: colorPulse 2s ease-in-out infinite;
+}
+
+.view-btn:hover svg {
+  animation: iconSpin 0.4s ease-in-out;
 }
 
 /* Modal Styles */
@@ -233,7 +236,6 @@
 }
 
 .skill-level-modal,
-.skill-description-modal,
 .skill-experience-modal,
 .skill-projects-modal,
 .skill-certifications-modal {
@@ -312,22 +314,22 @@
 }
 
 /* Cores dos labels quando preenchidos */
-.level-segment-container:nth-child(1) .level-segment-modal.filled + .level-label {
+.level-segment-container:nth-child(1) .level-segment-modal.filled+.level-label {
   color: #ff6b6b;
   font-weight: 600;
 }
 
-.level-segment-container:nth-child(2) .level-segment-modal.filled + .level-label {
+.level-segment-container:nth-child(2) .level-segment-modal.filled+.level-label {
   color: #ffa726;
   font-weight: 600;
 }
 
-.level-segment-container:nth-child(3) .level-segment-modal.filled + .level-label {
+.level-segment-container:nth-child(3) .level-segment-modal.filled+.level-label {
   color: #66bb6a;
   font-weight: 600;
 }
 
-.level-segment-container:nth-child(4) .level-segment-modal.filled + .level-label {
+.level-segment-container:nth-child(4) .level-segment-modal.filled+.level-label {
   color: #646cff;
   font-weight: 600;
 }
@@ -380,7 +382,6 @@
   font-weight: 500;
 }
 
-.skill-description-modal p,
 .skill-experience-modal p {
   color: rgba(255, 255, 255, 0.8);
   line-height: 1.6;
@@ -453,39 +454,95 @@
   box-shadow: 0 10px 25px rgba(100, 108, 255, 0.4);
 }
 
+@keyframes colorPulse {
+  0% { 
+    color: #646cff; 
+    filter: drop-shadow(0 0 5px rgba(100, 108, 255, 0.5));
+  }
+  50% { 
+    color: #535bf2; 
+    filter: drop-shadow(0 0 15px rgba(100, 108, 255, 0.8));
+  }
+  100% { 
+    color: #646cff; 
+    filter: drop-shadow(0 0 5px rgba(100, 108, 255, 0.5));
+  }
+}
+
+@keyframes iconSpin {
+  0% { 
+    transform: rotate(0deg); 
+    color: #646cff;
+  }
+  50% { 
+    transform: rotate(180deg); 
+    color: #ff6b6b;
+  }
+  100% { 
+    transform: rotate(360deg); 
+    color: #646cff;
+  }
+}
+
 /* Animações para cada cor */
 @keyframes levelGlowRed {
-  0% { box-shadow: 0 0 15px rgba(255, 107, 107, 0.6); }
-  100% { box-shadow: 0 0 25px rgba(255, 107, 107, 0.8); }
+  0% {
+    box-shadow: 0 0 15px rgba(255, 107, 107, 0.6);
+  }
+
+  100% {
+    box-shadow: 0 0 25px rgba(255, 107, 107, 0.8);
+  }
 }
 
 @keyframes levelGlowOrange {
-  0% { box-shadow: 0 0 15px rgba(255, 167, 38, 0.6); }
-  100% { box-shadow: 0 0 25px rgba(255, 167, 38, 0.8); }
+  0% {
+    box-shadow: 0 0 15px rgba(255, 167, 38, 0.6);
+  }
+
+  100% {
+    box-shadow: 0 0 25px rgba(255, 167, 38, 0.8);
+  }
 }
 
 @keyframes levelGlowGreen {
-  0% { box-shadow: 0 0 15px rgba(102, 187, 106, 0.6); }
-  100% { box-shadow: 0 0 25px rgba(102, 187, 106, 0.8); }
+  0% {
+    box-shadow: 0 0 15px rgba(102, 187, 106, 0.6);
+  }
+
+  100% {
+    box-shadow: 0 0 25px rgba(102, 187, 106, 0.8);
+  }
 }
 
 @keyframes levelGlowBlue {
-  0% { box-shadow: 0 0 15px rgba(100, 108, 255, 0.6); }
-  100% { box-shadow: 0 0 25px rgba(100, 108, 255, 0.8); }
+  0% {
+    box-shadow: 0 0 15px rgba(100, 108, 255, 0.6);
+  }
+
+  100% {
+    box-shadow: 0 0 25px rgba(100, 108, 255, 0.8);
+  }
 }
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideUp {
-  from { 
+  from {
     transform: translateY(50px);
     opacity: 0;
   }
-  to { 
+
+  to {
     transform: translateY(0);
     opacity: 1;
   }
@@ -500,40 +557,45 @@
   transform: scale(1.1);
 }
 
+.icon-plus {
+  height: 24px;
+  color: #646cff;
+}
+
 /* Responsivo */
 @media (max-width: 768px) {
   .modal-content {
     margin: 1rem;
     max-height: 90vh;
   }
-  
+
   .modal-header {
     padding: 1.5rem 1.5rem 1rem 1.5rem;
   }
-  
+
   .modal-body {
     padding: 1rem 1.5rem;
   }
-  
+
   .modal-footer {
     padding: 1rem 1.5rem 1.5rem 1.5rem;
   }
-  
+
   .modal-title h2 {
     font-size: 1.5rem;
   }
-  
+
   .modal-icon {
     width: 50px;
     height: 50px;
   }
-  
+
   .skill-card-header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.75rem;
+    gap: 0.8rem;
   }
-  
+
   .view-btn {
     position: absolute;
     top: 1rem;
@@ -541,13 +603,13 @@
   }
 
   .level-segments-modal {
-    gap: 0.5rem;
+    gap: 0.7rem;
   }
-  
+
   .level-label {
     font-size: 0.7rem;
   }
-  
+
   .current-level-highlight {
     font-size: 1rem;
     padding: 0.2rem 0.6rem;
@@ -559,17 +621,17 @@
     flex-direction: column;
     gap: 0.75rem;
   }
-  
+
   .level-segment-container {
     flex-direction: row;
     align-items: center;
     gap: 0.75rem;
   }
-  
+
   .level-segment-modal {
     height: 8px;
   }
-  
+
   .level-label {
     min-width: 80px;
     text-align: left;

@@ -45,33 +45,31 @@ function SkillCardModal({ skill }) {
     <>
       <div className="skill-card" onClick={openModal}>
         <div className="skill-card-header">
-          <img 
-            src={skill.icon} 
-            alt={`${skill.name} icon`} 
+          <img
+            src={skill.icon}
+            alt={`${skill.name} icon`}
             className="skill-icon"
           />
           <div className="skill-info">
             <h3 className="skill-name">{skill.name}</h3>
             <div className="skill-level">
-              {/* Nova barra de 4 níveis no card */}
               <div className="level-segments">
                 {[1, 2, 3, 4].map((segment) => (
-                  <div 
+                  <div
                     key={segment}
                     className={`level-segment ${skillLevel.level >= segment ? 'filled' : ''}`}
                   ></div>
                 ))}
               </div>
-              <span className="level-text">{skillLevel.text}</span>
             </div>
           </div>
           <button className="view-btn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path 
-                d="M15 12l-3-3m0 0l-3 3m3-3v12" 
-                stroke="currentColor" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="icon-plus">
+              <path
+                d="M12 5v14M5 12h14"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
                 strokeLinejoin="round"
               />
             </svg>
@@ -80,9 +78,9 @@ function SkillCardModal({ skill }) {
       </div>
 
       {/* Modal */}
-       {isModalOpen && (
-        <div 
-          className="modal-overlay" 
+      {isModalOpen && (
+        <div
+          className="modal-overlay"
           onClick={handleBackdropClick}
           onKeyDown={handleKeyDown}
           tabIndex={-1}
@@ -90,20 +88,20 @@ function SkillCardModal({ skill }) {
           <div className="modal-content">
             <div className="modal-header">
               <div className="modal-title">
-                <img 
-                  src={skill.icon} 
-                  alt={`${skill.name} icon`} 
+                <img
+                  src={skill.icon}
+                  alt={`${skill.name} icon`}
                   className="modal-icon"
                 />
                 <h2>{skill.name}</h2>
               </div>
               <button className="close-btn" onClick={closeModal}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path 
-                    d="X18 6L6 18M6 6l12 12" 
-                    stroke="currentColor" 
-                    strokeWidth="2" 
-                    strokeLinecap="round" 
+                  <path
+                    d="X18 6L6 18M6 6l12 12"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
                     strokeLinejoin="round"
                   />
                 </svg>
@@ -123,7 +121,7 @@ function SkillCardModal({ skill }) {
                       { level: 4, label: 'Mestre' }
                     ].map((item) => (
                       <div key={item.level} className="level-segment-container">
-                        <div 
+                        <div
                           className={`level-segment-modal ${skillLevel.level >= item.level ? 'filled' : ''}`}
                         ></div>
                         <span className="level-label">{item.label}</span>
@@ -136,11 +134,6 @@ function SkillCardModal({ skill }) {
                 </div>
               </div>
 
-              <div className="skill-description-modal">
-                <h4>Descrição</h4>
-                <p>{skill.description}</p>
-              </div>
-              
               <div className="skill-experience-modal">
                 <h4>Experiência</h4>
                 <p>{skill.experience}</p>
